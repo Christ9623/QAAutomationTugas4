@@ -22,7 +22,7 @@ public class WebTest extends BaseWebTest {
 		loginPage.inputPassword(password);
 		loginPage.clickLoginBtn();
 		String actualText = productPage.getProducttext();
-		String expectedText = "Product";
+		String expectedText = "Sauce Labs Backpack";
 		
 		Assert.assertTrue(actualText.contains(expectedText));
 	}

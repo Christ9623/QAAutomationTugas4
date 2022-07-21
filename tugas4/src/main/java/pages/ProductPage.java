@@ -6,7 +6,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProductPage extends BasePage {
 	
-	By productText = By.xpath("//span[@class='title']");
+	//By productText = By.xpath("//span[@class='title']");
+	By productText = By.xpath("//div[normalize-space()='Sauce Labs Backpack']");
 
 	public ProductPage(ThreadLocal<WebDriver> driver, ThreadLocal<WebDriverWait> explicitWait) {
 		super(driver, explicitWait);
