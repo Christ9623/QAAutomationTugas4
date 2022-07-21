@@ -25,11 +25,11 @@ public class BaseWebTest {
 		
 	}
 	
-//	@AfterMethod
-//	public void tearDown() {
-//		
-//		driver.get().quit();
-//		
-//	}
+	@AfterMethod
+	public void tearDown() {
+		
+		driver.get().quit();
+		
+	}
 
 }
