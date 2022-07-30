@@ -13,6 +13,13 @@ public class ProductPage extends BasePage {
 	By addProduct2 = By.id("add-to-cart-sauce-labs-bike-light");
 	By cartText = By.xpath("//div[normalize-space()='Sauce Labs Backpack']");
 	By cartText2 = By.xpath("//div[normalize-space()='Sauce Labs Bike Light']");
+	By COProduct = By.id("checkout");
+	By Continue = By.id("continue");
+	By Finish = By.id("finish");
+	By UserDetail = By.id("first-name");
+	By UserDetail2 = By.id("last-name");
+	By UserDetail3 = By.id("postal-code");
+	By SuccessText = By.xpath("//h2[normalize-space()='THANK YOU FOR YOUR ORDER']");
 
 	public ProductPage(ThreadLocal<WebDriver> driver, ThreadLocal<WebDriverWait> explicitWait) {
 		super(driver, explicitWait);
@@ -43,6 +50,39 @@ public class ProductPage extends BasePage {
 		clickAndWait (addProduct2);
 		
 	}
+	
+	public void checkoutProduct() {
+		
+		clickAndWait(COProduct);
+		
+	}
+	
+	public void inputDetail(String first, String last, String ZIP) {
+		
+		setText(UserDetail, first);
+		setText(UserDetail2, last);
+		setText(UserDetail3, ZIP);
+		
+	}
+	
+	public void checkoutContinue() {
+		
+		clickAndWait(Continue);
+		
+	}
+	
+	public void checkoutPayment() {
+		
+		clickAndWait(Finish);
+		
+	}
+	
+	public String getPaymentSuccess() {
+		
+		return getText(SuccessText);
+		
+	}
+	
 	
 //	public void addProduct1() {
 //		

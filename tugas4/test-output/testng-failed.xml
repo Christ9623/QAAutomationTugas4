@@ -5,8 +5,9 @@
     <classes>
       <class name="qaautomation.tugas4.WebTest">
         <methods>
+          <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="testAddProduct"/>
+          <include name="testLogin"/>
         </methods>
       </class> <!-- qaautomation.tugas4.WebTest -->
     </classes>

@@ -14,6 +14,9 @@ public class WebTest extends BaseWebTest {
 	
 	String username = "standard_user";
 	String password = "secret_sauce";
+	String first = "Christian";
+	String last = "Aditya";
+	String ZIP = "11440";
 	
 	@Test
 	public void testLogin() {
@@ -44,6 +47,24 @@ public class WebTest extends BaseWebTest {
 		
 		Assert.assertTrue(actualText.contains(expectedText));
 		Assert.assertTrue(actualText2.contains(expectedText2));
+	}
+	
+	@Test
+	public void testCheckoutProduct() {
+		
+		driver.get().get("https://www.saucedemo.com/");
+		loginPage.inputUsername(username);
+		loginPage.inputPassword(password);
+		loginPage.clickLoginBtn();
+		productPage.addProduct();
+		productPage.cart();
+		productPage.checkoutProduct();
+		productPage.inputDetail(first, last, ZIP);
+		productPage.checkoutContinue();
+		productPage.checkoutPayment();
+		String actualText = productPage.getPaymentSuccess();
+		String expectedText = "THANK YOU FOR YOUR ORDER";
+		Assert.assertTrue(actualText.contains(expectedText));
 	}
 
 
